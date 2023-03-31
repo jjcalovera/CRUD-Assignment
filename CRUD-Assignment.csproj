@@ -139,6 +139,12 @@
     <Compile Include="Forms\Users\frmViewUser.Designer.cs">
       <DependentUpon>frmViewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions\Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Functions\Login.cs" />
     <Compile Include="Functions\User.cs" />
     <Compile Include="Program.cs" />
