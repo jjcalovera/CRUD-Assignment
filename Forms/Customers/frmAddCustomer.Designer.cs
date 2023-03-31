@@ -101,6 +101,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnSave.TabStop = false;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBack
             // 
@@ -114,6 +115,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnBack.TabStop = false;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dateBirthday
             // 
@@ -249,6 +251,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Customer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmAddCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

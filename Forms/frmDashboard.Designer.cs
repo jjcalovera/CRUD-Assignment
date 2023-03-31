@@ -33,7 +33,7 @@ namespace CRUD_Assignment.Forms
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
-            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlDashboard = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,13 +89,13 @@ namespace CRUD_Assignment.Forms
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
-            // pnlMain
+            // pnlDashboard
             // 
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(200, 0);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(900, 715);
-            this.pnlMain.TabIndex = 1;
+            this.pnlDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDashboard.Location = new System.Drawing.Point(200, 0);
+            this.pnlDashboard.Name = "pnlDashboard";
+            this.pnlDashboard.Size = new System.Drawing.Size(900, 715);
+            this.pnlDashboard.TabIndex = 1;
             // 
             // frmDashboard
             // 
@@ -103,7 +103,7 @@ namespace CRUD_Assignment.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 715);
-            this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1100, 715);
@@ -122,6 +122,6 @@ namespace CRUD_Assignment.Forms
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel pnlDashboard;
     }
 }

@@ -106,6 +106,7 @@ namespace CRUD_Assignment.Forms.Users
             this.btnBack.TabStop = false;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtUsername
             // 
@@ -274,6 +275,7 @@ namespace CRUD_Assignment.Forms.Users
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View User";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmViewUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

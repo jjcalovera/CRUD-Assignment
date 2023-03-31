@@ -37,7 +37,7 @@ INSERT INTO users(firstName, middleName, lastName, genderFID, age, birthday, con
 VALUES("Joven Joshua", "Celiz", "Alovera", 1, 23, "1999-10-25", "09434071429", "jjcalovera@gmail.com", "admin", MD5("admin"));
 
 CREATE TABLE customers(
-    id INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
     firstName VARCHAR(45) NOT NULL,
     middleName VARCHAR(45) DEFAULT NULL,
     lastName VARCHAR(45) NOT NULL,

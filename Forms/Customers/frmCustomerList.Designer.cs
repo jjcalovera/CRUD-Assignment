@@ -50,6 +50,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnUpdateCustomer.TabStop = false;
             this.btnUpdateCustomer.Text = "Update Customer";
             this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // btnDeleteCustomer
             // 
@@ -63,6 +64,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnDeleteCustomer.TabStop = false;
             this.btnDeleteCustomer.Text = "Delete Customer";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnViewCustomer
             // 
@@ -75,6 +77,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnViewCustomer.TabStop = false;
             this.btnViewCustomer.Text = "View Customer";
             this.btnViewCustomer.UseVisualStyleBackColor = true;
+            this.btnViewCustomer.Click += new System.EventHandler(this.btnViewCustomer_Click);
             // 
             // btnAddCustomer
             // 
@@ -87,6 +90,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnAddCustomer.TabStop = false;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // gridCustomers
             // 
@@ -97,9 +101,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.gridCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -117,12 +122,14 @@ namespace CRUD_Assignment.Forms.Customers
             this.gridCustomers.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridCustomers.Location = new System.Drawing.Point(12, 56);
             this.gridCustomers.Name = "gridCustomers";
+            this.gridCustomers.RowHeadersVisible = false;
             this.gridCustomers.RowHeadersWidth = 51;
             this.gridCustomers.RowTemplate.Height = 24;
             this.gridCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCustomers.Size = new System.Drawing.Size(876, 647);
             this.gridCustomers.TabIndex = 11;
             this.gridCustomers.TabStop = false;
+            this.gridCustomers.VisibleChanged += new System.EventHandler(this.gridCustomers_VisibleChanged);
             // 
             // frmCustomerList
             // 
@@ -140,6 +147,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.Name = "frmCustomerList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer List";
+            this.Load += new System.EventHandler(this.frmCustomerList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).EndInit();
             this.ResumeLayout(false);
 

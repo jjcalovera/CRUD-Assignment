@@ -19,20 +19,20 @@ namespace CRUD_Assignment.Forms
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
+            pnlDashboard.Controls.Clear();
             Forms.Users.frmUserList frmUserList = new Forms.Users.frmUserList();
             frmUserList.TopLevel = false;
-            pnlMain.Controls.Add(frmUserList);
+            pnlDashboard.Controls.Add(frmUserList);
             frmUserList.Dock = DockStyle.Fill;
             frmUserList.Show();
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
+            pnlDashboard.Controls.Clear();
             Forms.Customers.frmCustomerList frmCustomerList = new Forms.Customers.frmCustomerList();
             frmCustomerList.TopLevel = false;
-            pnlMain.Controls.Add(frmCustomerList);
+            pnlDashboard.Controls.Add(frmCustomerList);
             frmCustomerList.Dock = DockStyle.Fill;
             frmCustomerList.Show();
         }

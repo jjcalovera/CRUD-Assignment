@@ -16,5 +16,36 @@ namespace CRUD_Assignment.Forms.Users
         {
             InitializeComponent();
         }
+
+        Components.Value val = new Components.Value();
+
+        private void frmViewUser_Load(object sender, EventArgs e)
+        {
+            txtFirstName.Text = val.UserFirstName;
+            txtMiddleName.Text = val.UserMiddleName;
+            txtLastName.Text = val.UserLastName;
+            txtGender.Text = val.UserGender;
+            txtBirthday.Text = val.UserBirthday.Date.ToString();
+            txtContactNumber.Text = val.UserContactNumber;
+            txtEmail.Text = val.UserEmail;
+            txtUsername.Text = val.UserUsername;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Forms.Users.frmUserList frmUserList = new Forms.Users.frmUserList();
+            frmUserList.TopLevel = false;
+
+            Forms.frmDashboard frmDashboard1 = new Forms.frmDashboard();
+            frmDashboard1.Show();
+
+            Forms.frmDashboard frmDashboard2 = (Forms.frmDashboard)Application.OpenForms["frmDashboard"];
+            Panel pnlDashboard = (Panel)frmDashboard2.Controls["pnlDashboard"];
+
+            pnlDashboard.Controls.Add(frmUserList);
+            frmUserList.Dock = DockStyle.Fill;
+            frmUserList.Show();
+            this.Close();
+        }
     }
 }

@@ -128,6 +128,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnBack.TabStop = false;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label5
             // 
@@ -245,6 +246,8 @@ namespace CRUD_Assignment.Forms.Customers
             this.Name = "frmViewCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Customer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmViewCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

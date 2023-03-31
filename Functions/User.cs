@@ -24,7 +24,8 @@ namespace CRUD_Assignment.Functions
                                     DATE_FORMAT(u.birthday, '%m/%d/%Y'), u.contactNumber, u.email,
                                     DATE_FORMAT(u.createdAt, '%m/%d/%Y'), DATE_FORMAT(u.updatedAt, '%m/%d/%Y')
                                     FROM users AS u
-                                    INNER JOIN genders AS g ON u.genderFID = g.id;";
+                                    INNER JOIN genders AS g ON u.genderFID = g.id
+                                    ORDER BY firstName;";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, connection))
                     {
@@ -92,6 +93,7 @@ namespace CRUD_Assignment.Functions
                             val.UserMiddleName = dt.Rows[0].Field<string>("middleName");
                             val.UserLastName = dt.Rows[0].Field<string>("lastName");
                             val.UserGender = dt.Rows[0].Field<string>("gender");
+                            val.UserAge = dt.Rows[0].Field<int>("age");
                             val.UserBirthday = dt.Rows[0].Field<DateTime>("birthday");
                             val.UserContactNumber = dt.Rows[0].Field<string>("contactNumber");
                             val.UserEmail = dt.Rows[0].Field<string>("email");
@@ -122,9 +124,9 @@ namespace CRUD_Assignment.Functions
             {
                 using (MySqlConnection connection = new MySqlConnection(con.conString()))
                 {
-                    string sql = @"SELECT g.id
-                                    FROM genders AS g
-                                    WHERE g.gender = @gender;";
+                    string sql = @"SELECT id
+                                    FROM genders
+                                    WHERE gender = @gender;";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, connection))
                     {
@@ -138,7 +140,7 @@ namespace CRUD_Assignment.Functions
                         dt.Clear();
                         da.Fill(dt);
 
-                        val.GenderId = dt.Rows[0].Field<int>("g.id");
+                        val.GenderId = dt.Rows[0].Field<int>("id");
                     }
 
                     sql = @"INSERT INTO users(firstName, middleName, lastName, genderFID, age, birthday, contactNumber, email, username, password)
@@ -156,8 +158,6 @@ namespace CRUD_Assignment.Functions
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.Parameters.AddWithValue("@username", username);
                         cmd.Parameters.AddWithValue("@password", password);
-
-                        connection.Open();
 
                         MySqlDataReader dr = cmd.ExecuteReader();
                         dr.Close();
@@ -182,9 +182,9 @@ namespace CRUD_Assignment.Functions
             {
                 using (MySqlConnection connection = new MySqlConnection(con.conString()))
                 {
-                    string sql = @"SELECT g.id
-                                    FROM genders AS g
-                                    WHERE g.gender = @gender;";
+                    string sql = @"SELECT id
+                                    FROM genders
+                                    WHERE gender = @gender;";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, connection))
                     {
@@ -198,12 +198,12 @@ namespace CRUD_Assignment.Functions
                         dt.Clear();
                         da.Fill(dt);
 
-                        val.GenderId = dt.Rows[0].Field<int>("g.id");
+                        val.GenderId = dt.Rows[0].Field<int>("id");
                     }
 
                     sql = @"UPDATE users
                                 SET firstName = @firstName, middleName = @middleName, lastName = @lastName, genderFID = @genderFID, age = @age,
-                                birthday = @birthday, contactNumber = @contactNumber, email = @email, username = @username
+                                birthday = @birthday, contactNumber = @contactNumber, email = @email, username = @username, updatedAt = CURRENT_TIMESTAMP
                                 WHERE id = @id;";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, connection))
@@ -218,8 +218,6 @@ namespace CRUD_Assignment.Functions
                         cmd.Parameters.AddWithValue("@contactNumber", contactNumber);
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.Parameters.AddWithValue("@username", username);
-
-                        connection.Open();
 
                         MySqlDataReader dr = cmd.ExecuteReader();
                         dr.Close();
