@@ -37,7 +37,7 @@ namespace CRUD_Assignment.Forms.Users
             {
                 MessageBox.Show("Select user first!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if(user.GetUser(int.Parse(gridUsers.SelectedCells[0].Value.ToString())))
             {
                 Forms.Users.frmViewUser frmViewUser = new Forms.Users.frmViewUser();
                 frmViewUser.Show();

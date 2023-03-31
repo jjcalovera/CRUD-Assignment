@@ -249,6 +249,7 @@ namespace CRUD_Assignment.Forms.Customers
             this.Name = "frmUpdateCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Customer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmUpdateCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

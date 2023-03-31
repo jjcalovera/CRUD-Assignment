@@ -24,7 +24,7 @@ namespace CRUD_Assignment.Functions
                                     c.contactNumber, c.email, DATE_FORMAT(c.createdAt, '%m/%d/%Y'), DATE_FORMAT(c.updatedAt, '%m/%d/%Y')
                                     FROM customers AS c
                                     INNER JOIN genders AS g ON c.genderFID = g.id
-                                    ORDER BY firstName;";
+                                    ORDER BY c.lastName, c.firstName;";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, connection))
                     {

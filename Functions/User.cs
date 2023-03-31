@@ -25,7 +25,7 @@ namespace CRUD_Assignment.Functions
                                     DATE_FORMAT(u.createdAt, '%m/%d/%Y'), DATE_FORMAT(u.updatedAt, '%m/%d/%Y')
                                     FROM users AS u
                                     INNER JOIN genders AS g ON u.genderFID = g.id
-                                    ORDER BY firstName;";
+                                    ORDER BY u.lastName, u.firstName;";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, connection))
                     {

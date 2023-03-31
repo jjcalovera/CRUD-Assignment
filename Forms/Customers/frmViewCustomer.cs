@@ -25,7 +25,7 @@ namespace CRUD_Assignment.Forms.Customers
             txtMiddleName.Text = val.CustomerMiddleName;
             txtLastName.Text = val.CustomerLastName;
             txtGender.Text = val.CustomerGender;
-            txtBirthday.Text = val.CustomerBirthday.Date.ToString();
+            txtBirthday.Text = val.CustomerBirthday.ToString("d");
             txtContactNumber.Text = val.CustomerContactNumber;
             txtEmail.Text = val.CustomerEmail;
         }
