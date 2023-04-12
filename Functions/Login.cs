@@ -20,7 +20,7 @@ namespace CRUD_Assignment.Functions
             {
                 using (MySqlConnection connection = new MySqlConnection(con.conString()))
                 {
-                    string sql = @"SELECT u.id, u.firstName, u.middleName, u.lastName, g.gender, u.age,
+                    string sql = @"SELECT u.id, u.profilePicture, u.firstName, u.middleName, u.lastName, g.gender, u.age,
                                     u.birthday, u.contactNumber, u.email, u.username
                                     FROM users AS u
                                     INNER JOIN genders AS g ON u.genderFID = g.id
@@ -42,6 +42,7 @@ namespace CRUD_Assignment.Functions
                         if (dt.Rows.Count > 0)
                         {
                             val.MyId = dt.Rows[0].Field<int>("id");
+                            val.MyProfilePicture = dt.Rows[0].Field<byte[]>("profilePicture");
                             val.MyFirstName = dt.Rows[0].Field<string>("firstName");
                             val.MyMiddleName = dt.Rows[0].Field<string>("middleName");
                             val.MyLastName = dt.Rows[0].Field<string>("lastName");

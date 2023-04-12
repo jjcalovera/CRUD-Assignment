@@ -16,6 +16,7 @@ INSERT INTO genders(gender) VALUES("Female");
 
 CREATE TABLE users(
     id INT NOT NULL AUTO_INCREMENT,
+    profilePicture BLOB DEFAULT NULL,
     firstName VARCHAR(45) NOT NULL,
     middleName VARCHAR(45) DEFAULT NULL,
     lastName VARCHAR(45) NOT NULL,

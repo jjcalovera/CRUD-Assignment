@@ -45,8 +45,9 @@ namespace CRUD_Assignment.Forms
             this.panel1.Controls.Add(this.btnUsers);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 715);
+            this.panel1.Size = new System.Drawing.Size(160, 700);
             this.panel1.TabIndex = 0;
             // 
             // btnExit
@@ -54,9 +55,10 @@ namespace CRUD_Assignment.Forms
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(12, 665);
+            this.btnExit.Location = new System.Drawing.Point(10, 660);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(174, 38);
+            this.btnExit.Size = new System.Drawing.Size(139, 30);
             this.btnExit.TabIndex = 8;
             this.btnExit.TabStop = false;
             this.btnExit.Text = "Exit";
@@ -67,9 +69,10 @@ namespace CRUD_Assignment.Forms
             // 
             this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.Location = new System.Drawing.Point(12, 56);
+            this.btnCustomers.Location = new System.Drawing.Point(10, 45);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(174, 38);
+            this.btnCustomers.Size = new System.Drawing.Size(139, 30);
             this.btnCustomers.TabIndex = 7;
             this.btnCustomers.TabStop = false;
             this.btnCustomers.Text = "Customers";
@@ -80,9 +83,10 @@ namespace CRUD_Assignment.Forms
             // 
             this.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsers.Location = new System.Drawing.Point(12, 12);
+            this.btnUsers.Location = new System.Drawing.Point(10, 10);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(174, 38);
+            this.btnUsers.Size = new System.Drawing.Size(139, 30);
             this.btnUsers.TabIndex = 6;
             this.btnUsers.TabStop = false;
             this.btnUsers.Text = "Users";
@@ -92,21 +96,23 @@ namespace CRUD_Assignment.Forms
             // pnlDashboard
             // 
             this.pnlDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDashboard.Location = new System.Drawing.Point(200, 0);
+            this.pnlDashboard.Location = new System.Drawing.Point(160, 0);
+            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(900, 715);
+            this.pnlDashboard.Size = new System.Drawing.Size(840, 700);
             this.pnlDashboard.TabIndex = 1;
             // 
             // frmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1100, 715);
+            this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1100, 715);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "frmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";

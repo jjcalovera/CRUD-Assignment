@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CRUD_Assignment.Forms.Users
 {
@@ -21,53 +22,85 @@ namespace CRUD_Assignment.Forms.Users
         Functions.Gender gender = new Functions.Gender();
         Functions.User user = new Functions.User();
 
+        private void ShowToastMessage(String header, String message, Color bgColor)
+        {
+            Forms.toastmessage.frmToastMessage frmToastMessage = new Forms.toastmessage.frmToastMessage(header, message, bgColor);
+            frmToastMessage.Show();
+        }
+
+        private void RemovePhoto()
+        {
+            imgLocation = string.Empty;
+            picProfileUser.ImageLocation = imgLocation;
+        }
+
         private void frmAddUser_Load(object sender, EventArgs e)
         {
             gender.LoadGendersInCmbGender(cmbGender);
+        }
+
+        string imgLocation = string.Empty;
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.InitialDirectory = "C:\\Users\\joven joshua alovera\\Pictures";
+            dialog.Filter = "PNG Files|*.png|JPG Files|*.jpg|All Files|*.*";
+            
+            if(dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName;
+                picProfileUser.ImageLocation = imgLocation;
+            }
+
+            txtFirstName.Focus();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            RemovePhoto();
+            txtFirstName.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if(String.IsNullOrWhiteSpace(txtFirstName.Text))
             {
-                MessageBox.Show("First name is required!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToastMessage("Required!", "First name field is required!", Color.Red);
                 txtFirstName.Focus();
             }
             else if(String.IsNullOrWhiteSpace(txtLastName.Text))
             {
-                MessageBox.Show("Last name is required!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToastMessage("Required!", "Last name field is required!", Color.Red);
                 txtLastName.Focus();
             }
             else if(String.IsNullOrWhiteSpace(cmbGender.Text))
             {
-                MessageBox.Show("Gender is required!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToastMessage("Required!", "Gender field is required!", Color.Red);
                 cmbGender.Focus();
             }
             else if(String.IsNullOrWhiteSpace(txtContactNumber.Text) && String.IsNullOrWhiteSpace(txtEmail.Text))
             {
-                MessageBox.Show("Please provide contact information either contact number or email!", "", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                ShowToastMessage("Required!", "Please provide contact information\neither contact number or email!", Color.Red);
                 txtContactNumber.Focus();
-
             }
             else if(String.IsNullOrWhiteSpace(txtUsername.Text))
             {
-                MessageBox.Show("Username is required!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToastMessage("Required!", "Username field is required!", Color.Red);
                 txtUsername.Focus();
             }
             else if(String.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                MessageBox.Show("Password is required!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToastMessage("Required!", "Password field is required!", Color.Red);
                 txtPassword.Focus();
             }
             else if(String.IsNullOrWhiteSpace(txtConfirmPassword.Text))
             {
-                MessageBox.Show("Confirm password is required!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToastMessage("Required!", "Confirm password field is required!", Color.Red);
                 txtConfirmPassword.Focus();
             }
             else if(check.CheckUsernameIfExists(txtUsername.Text))
             {
-                MessageBox.Show("Username is already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToastMessage("Already Taken!", "Username is already taken!", Color.Red);
 
                 txtUsername.ResetText();
                 txtUsername.Focus();
@@ -75,7 +108,7 @@ namespace CRUD_Assignment.Forms.Users
             }
             else if(txtPassword.Text != txtConfirmPassword.Text)
             {
-                MessageBox.Show("Password do not match!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToastMessage("Error!", "Password do not match!", Color.Red);
 
                 txtPassword.ResetText();
                 txtConfirmPassword.ResetText();
@@ -84,13 +117,22 @@ namespace CRUD_Assignment.Forms.Users
             }
             else
             {
+                byte[] profilePicture = null;
+                if (!String.IsNullOrWhiteSpace(imgLocation))
+                {
+                    FileStream fs = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    profilePicture = br.ReadBytes((int)fs.Length);
+                }
+
                 int age = DateTime.Today.Year - dateBirthday.Value.Year;
                 if (dateBirthday.Value.Date > DateTime.Today.AddYears(-age)) age--;
 
-                if (user.AddUser(txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, cmbGender.Text, age, dateBirthday.Value.Date,
+                if (user.AddUser(profilePicture, txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, cmbGender.Text, age, dateBirthday.Value.Date,
                     txtContactNumber.Text, txtEmail.Text, txtUsername.Text, txtPassword.Text))
                 {
-                    MessageBox.Show("User successfully added!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowToastMessage("Success!", "User successfully created!", Color.LimeGreen);
+                    RemovePhoto();
 
                     txtFirstName.ResetText();
                     txtMiddleName.ResetText();
@@ -108,7 +150,7 @@ namespace CRUD_Assignment.Forms.Users
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add user!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ShowToastMessage("Failed!", "Failed to create user!", Color.Red);
                 }
             }
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CRUD_Assignment.Forms.Users
 {
@@ -21,6 +22,12 @@ namespace CRUD_Assignment.Forms.Users
 
         private void frmViewUser_Load(object sender, EventArgs e)
         {
+            if (val.UserProfilePicture != null)
+            {
+                MemoryStream ms = new MemoryStream(val.UserProfilePicture);
+                picProfileUser.Image = Image.FromStream(ms);
+            }
+
             txtFirstName.Text = val.UserFirstName;
             txtMiddleName.Text = val.UserMiddleName;
             txtLastName.Text = val.UserLastName;

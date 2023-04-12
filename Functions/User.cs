@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace CRUD_Assignment.Functions
 {
@@ -20,7 +21,7 @@ namespace CRUD_Assignment.Functions
             {
                 using (MySqlConnection connection = new MySqlConnection(con.conString()))
                 {
-                    string sql = @"SELECT u.id, u.firstName, u.middleName, u.lastName, g.gender, u.age,
+                    string sql = @"SELECT u.id, u.profilePicture, u.firstName, u.middleName, u.lastName, g.gender, u.age,
                                     DATE_FORMAT(u.birthday, '%m/%d/%Y'), u.contactNumber, u.email,
                                     DATE_FORMAT(u.createdAt, '%m/%d/%Y'), DATE_FORMAT(u.updatedAt, '%m/%d/%Y')
                                     FROM users AS u
@@ -41,6 +42,7 @@ namespace CRUD_Assignment.Functions
                         grid.ClearSelection();
 
                         grid.Columns["id"].Visible = false;
+                        grid.Columns["profilePicture"].HeaderText = "Profile Picture";
                         grid.Columns["firstName"].HeaderText = "First Name";
                         grid.Columns["middleName"].HeaderText = "Middle Name";
                         grid.Columns["lastName"].HeaderText = "Last Name";
@@ -51,6 +53,10 @@ namespace CRUD_Assignment.Functions
                         grid.Columns["email"].HeaderText = "Email";
                         grid.Columns["DATE_FORMAT(u.createdAt, '%m/%d/%Y')"].HeaderText = "Created At";
                         grid.Columns["DATE_FORMAT(u.updatedAt, '%m/%d/%Y')"].HeaderText = "UpdatedAt";
+
+                        DataGridViewImageColumn clmProfilePicture = new DataGridViewImageColumn();
+                        clmProfilePicture = (DataGridViewImageColumn)grid.Columns["profilePicture"];
+                        clmProfilePicture.ImageLayout = DataGridViewImageCellLayout.Stretch;
 
                         connection.Close();
                     }
@@ -68,7 +74,7 @@ namespace CRUD_Assignment.Functions
             {
                 using (MySqlConnection connection = new MySqlConnection(con.conString()))
                 {
-                    string sql = @"SELECT u.id, u.firstName, u.middleName, u.lastName, g.gender, u.age,
+                    string sql = @"SELECT u.id, u.profilePicture, u.firstName, u.middleName, u.lastName, g.gender, u.age,
                                     u.birthday, u.contactNumber, u.email, u.username
                                     FROM users AS u
                                     INNER JOIN genders AS g ON u.genderFID = g.id
@@ -89,6 +95,7 @@ namespace CRUD_Assignment.Functions
                         if(dt.Rows.Count > 0)
                         {
                             val.UserId = dt.Rows[0].Field<int>("id");
+                            val.UserProfilePicture = dt.Rows[0].Field<byte[]>("profilePicture");
                             val.UserFirstName = dt.Rows[0].Field<string>("firstName");
                             val.UserMiddleName = dt.Rows[0].Field<string>("middleName");
                             val.UserLastName = dt.Rows[0].Field<string>("lastName");
@@ -117,7 +124,7 @@ namespace CRUD_Assignment.Functions
             }
         }
 
-        public bool AddUser(string firstName, string middleName, string lastName, string gender, int age, DateTime birthday,
+        public bool AddUser(byte[] profilePicture, string firstName, string middleName, string lastName, string gender, int age, DateTime birthday,
             string contactNumber, string email, string username, string password)
         {
             try
@@ -143,11 +150,12 @@ namespace CRUD_Assignment.Functions
                         val.GenderId = dt.Rows[0].Field<int>("id");
                     }
 
-                    sql = @"INSERT INTO users(firstName, middleName, lastName, genderFID, age, birthday, contactNumber, email, username, password)
-                                VALUES(@firstName, @middleName, @lastName, @genderFID, @age, @birthday, @contactNumber, @email, @username, MD5(@password));";
+                    sql = @"INSERT INTO users(profilePicture, firstName, middleName, lastName, genderFID, age, birthday, contactNumber, email, username, password)
+                                VALUES(@profilePicture, @firstName, @middleName, @lastName, @genderFID, @age, @birthday, @contactNumber, @email, @username, MD5(@password));";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, connection))
                     {
+                        cmd.Parameters.AddWithValue("@profilePicture", profilePicture);
                         cmd.Parameters.AddWithValue("@firstName", firstName);
                         cmd.Parameters.AddWithValue("@middleName", middleName);
                         cmd.Parameters.AddWithValue("@lastName", lastName);
@@ -175,7 +183,7 @@ namespace CRUD_Assignment.Functions
             }
         }
 
-        public bool UpdateUser(int id, string firstName, string middleName, string lastName, string gender, int age, DateTime birthday,
+        public bool UpdateUser(int id, byte[] profilePicture, string firstName, string middleName, string lastName, string gender, int age, DateTime birthday,
             string contactNumber, string email, string username)
         {
             try
@@ -202,13 +210,14 @@ namespace CRUD_Assignment.Functions
                     }
 
                     sql = @"UPDATE users
-                                SET firstName = @firstName, middleName = @middleName, lastName = @lastName, genderFID = @genderFID, age = @age,
+                                SET profilePicture = @profilePicture, firstName = @firstName, middleName = @middleName, lastName = @lastName, genderFID = @genderFID, age = @age,
                                 birthday = @birthday, contactNumber = @contactNumber, email = @email, username = @username, updatedAt = CURRENT_TIMESTAMP
                                 WHERE id = @id;";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, connection))
                     {
                         cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@profilePicture", profilePicture);
                         cmd.Parameters.AddWithValue("@firstName", firstName);
                         cmd.Parameters.AddWithValue("@middleName", middleName);
                         cmd.Parameters.AddWithValue("@lastName", lastName);

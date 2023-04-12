@@ -43,9 +43,10 @@ namespace CRUD_Assignment.Forms.Customers
             // 
             this.btnUpdateCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdateCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(372, 12);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(298, 10);
+            this.btnUpdateCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(174, 38);
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(139, 30);
             this.btnUpdateCustomer.TabIndex = 15;
             this.btnUpdateCustomer.TabStop = false;
             this.btnUpdateCustomer.Text = "Update Customer";
@@ -57,9 +58,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnDeleteCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(714, 12);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(691, 10);
+            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(174, 38);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(139, 30);
             this.btnDeleteCustomer.TabIndex = 14;
             this.btnDeleteCustomer.TabStop = false;
             this.btnDeleteCustomer.Text = "Delete Customer";
@@ -70,9 +72,10 @@ namespace CRUD_Assignment.Forms.Customers
             // 
             this.btnViewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewCustomer.Location = new System.Drawing.Point(192, 12);
+            this.btnViewCustomer.Location = new System.Drawing.Point(154, 10);
+            this.btnViewCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewCustomer.Name = "btnViewCustomer";
-            this.btnViewCustomer.Size = new System.Drawing.Size(174, 38);
+            this.btnViewCustomer.Size = new System.Drawing.Size(139, 30);
             this.btnViewCustomer.TabIndex = 13;
             this.btnViewCustomer.TabStop = false;
             this.btnViewCustomer.Text = "View Customer";
@@ -83,9 +86,10 @@ namespace CRUD_Assignment.Forms.Customers
             // 
             this.btnAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomer.Location = new System.Drawing.Point(12, 12);
+            this.btnAddCustomer.Location = new System.Drawing.Point(10, 10);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(174, 38);
+            this.btnAddCustomer.Size = new System.Drawing.Size(139, 30);
             this.btnAddCustomer.TabIndex = 12;
             this.btnAddCustomer.TabStop = false;
             this.btnAddCustomer.Text = "Add Customer";
@@ -120,30 +124,33 @@ namespace CRUD_Assignment.Forms.Customers
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gridCustomers.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridCustomers.Location = new System.Drawing.Point(12, 56);
+            this.gridCustomers.Location = new System.Drawing.Point(10, 45);
+            this.gridCustomers.Margin = new System.Windows.Forms.Padding(2);
+            this.gridCustomers.MultiSelect = false;
             this.gridCustomers.Name = "gridCustomers";
             this.gridCustomers.RowHeadersVisible = false;
             this.gridCustomers.RowHeadersWidth = 51;
             this.gridCustomers.RowTemplate.Height = 24;
             this.gridCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCustomers.Size = new System.Drawing.Size(876, 647);
+            this.gridCustomers.Size = new System.Drawing.Size(821, 646);
             this.gridCustomers.TabIndex = 11;
             this.gridCustomers.TabStop = false;
             this.gridCustomers.VisibleChanged += new System.EventHandler(this.gridCustomers_VisibleChanged);
             // 
             // frmCustomerList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 715);
+            this.ClientSize = new System.Drawing.Size(840, 700);
             this.Controls.Add(this.btnUpdateCustomer);
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.btnViewCustomer);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.gridCustomers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(900, 715);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(840, 700);
             this.Name = "frmCustomerList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer List";

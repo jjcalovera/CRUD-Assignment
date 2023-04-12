@@ -51,10 +51,11 @@ namespace CRUD_Assignment.Forms.Customers
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(427, 163);
+            this.txtEmail.Location = new System.Drawing.Point(402, 194);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.MaxLength = 45;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(258, 30);
+            this.txtEmail.Size = new System.Drawing.Size(207, 26);
             this.txtEmail.TabIndex = 6;
             // 
             // label10
@@ -62,9 +63,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(422, 135);
+            this.label10.Location = new System.Drawing.Point(398, 172);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 25);
+            this.label10.Size = new System.Drawing.Size(48, 20);
             this.label10.TabIndex = 46;
             this.label10.Text = "Email";
             // 
@@ -72,10 +74,11 @@ namespace CRUD_Assignment.Forms.Customers
             // 
             this.txtContactNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContactNumber.Location = new System.Drawing.Point(427, 84);
+            this.txtContactNumber.Location = new System.Drawing.Point(402, 131);
+            this.txtContactNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtContactNumber.MaxLength = 45;
             this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(258, 30);
+            this.txtContactNumber.Size = new System.Drawing.Size(207, 26);
             this.txtContactNumber.TabIndex = 5;
             // 
             // label9
@@ -83,9 +86,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(422, 56);
+            this.label9.Location = new System.Drawing.Point(398, 109);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 25);
+            this.label9.Size = new System.Drawing.Size(125, 20);
             this.label9.TabIndex = 45;
             this.label9.Text = "Contact Number";
             // 
@@ -94,9 +98,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(783, 665);
+            this.btnSave.Location = new System.Drawing.Point(746, 660);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(105, 38);
+            this.btnSave.Size = new System.Drawing.Size(84, 30);
             this.btnSave.TabIndex = 43;
             this.btnSave.TabStop = false;
             this.btnSave.Text = "Save";
@@ -108,9 +113,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(672, 665);
+            this.btnBack.Location = new System.Drawing.Point(658, 660);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(105, 38);
+            this.btnBack.Size = new System.Drawing.Size(84, 30);
             this.btnBack.TabIndex = 42;
             this.btnBack.TabStop = false;
             this.btnBack.Text = "Back";
@@ -122,9 +128,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.dateBirthday.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateBirthday.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateBirthday.Location = new System.Drawing.Point(132, 409);
+            this.dateBirthday.Location = new System.Drawing.Point(166, 391);
+            this.dateBirthday.Margin = new System.Windows.Forms.Padding(2);
             this.dateBirthday.Name = "dateBirthday";
-            this.dateBirthday.Size = new System.Drawing.Size(258, 30);
+            this.dateBirthday.Size = new System.Drawing.Size(207, 26);
             this.dateBirthday.TabIndex = 4;
             // 
             // cmbGender
@@ -133,9 +140,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.cmbGender.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(132, 321);
+            this.cmbGender.Location = new System.Drawing.Point(166, 321);
+            this.cmbGender.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(258, 33);
+            this.cmbGender.Size = new System.Drawing.Size(207, 28);
             this.cmbGender.TabIndex = 3;
             // 
             // label5
@@ -143,9 +151,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(127, 381);
+            this.label5.Location = new System.Drawing.Point(162, 369);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 25);
+            this.label5.Size = new System.Drawing.Size(67, 20);
             this.label5.TabIndex = 39;
             this.label5.Text = "Birthday";
             // 
@@ -154,9 +163,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(127, 293);
+            this.lblGender.Location = new System.Drawing.Point(162, 298);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(77, 25);
+            this.lblGender.Size = new System.Drawing.Size(63, 20);
             this.lblGender.TabIndex = 37;
             this.lblGender.Text = "Gender";
             // 
@@ -164,10 +174,11 @@ namespace CRUD_Assignment.Forms.Customers
             // 
             this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(132, 243);
+            this.txtLastName.Location = new System.Drawing.Point(166, 258);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.MaxLength = 45;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(258, 30);
+            this.txtLastName.Size = new System.Drawing.Size(207, 26);
             this.txtLastName.TabIndex = 2;
             // 
             // label3
@@ -175,9 +186,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(127, 215);
+            this.label3.Location = new System.Drawing.Point(162, 236);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 25);
+            this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 33;
             this.label3.Text = "Last Name";
             // 
@@ -185,10 +197,11 @@ namespace CRUD_Assignment.Forms.Customers
             // 
             this.txtMiddleName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMiddleName.Location = new System.Drawing.Point(132, 163);
+            this.txtMiddleName.Location = new System.Drawing.Point(166, 194);
+            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2);
             this.txtMiddleName.MaxLength = 45;
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(258, 30);
+            this.txtMiddleName.Size = new System.Drawing.Size(207, 26);
             this.txtMiddleName.TabIndex = 1;
             // 
             // label2
@@ -196,9 +209,10 @@ namespace CRUD_Assignment.Forms.Customers
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(127, 135);
+            this.label2.Location = new System.Drawing.Point(162, 172);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 25);
+            this.label2.Size = new System.Drawing.Size(101, 20);
             this.label2.TabIndex = 30;
             this.label2.Text = "Middle Name";
             // 
@@ -206,10 +220,11 @@ namespace CRUD_Assignment.Forms.Customers
             // 
             this.txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(132, 84);
+            this.txtFirstName.Location = new System.Drawing.Point(166, 131);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.MaxLength = 45;
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(258, 30);
+            this.txtFirstName.Size = new System.Drawing.Size(207, 26);
             this.txtFirstName.TabIndex = 0;
             // 
             // label1
@@ -217,18 +232,19 @@ namespace CRUD_Assignment.Forms.Customers
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(127, 56);
+            this.label1.Location = new System.Drawing.Point(162, 109);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 25);
+            this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 27;
             this.label1.Text = "First Name";
             // 
             // frmAddCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 715);
+            this.ClientSize = new System.Drawing.Size(840, 700);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtContactNumber);
@@ -246,7 +262,8 @@ namespace CRUD_Assignment.Forms.Customers
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(900, 715);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(840, 700);
             this.Name = "frmAddCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Customer";

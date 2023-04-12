@@ -38,6 +38,13 @@ namespace CRUD_Assignment.Components
             set { myId = value; }
         }
 
+        public static byte[] myProfilePicture;
+        public byte[] MyProfilePicture
+        {
+            get { return myProfilePicture; }
+            set { myProfilePicture = value; }
+        }
+
         public static string myFirstName;
         public string MyFirstName
         {
@@ -122,6 +129,13 @@ namespace CRUD_Assignment.Components
         {
             get { return userId; }
             set { userId = value; }
+        }
+
+        public static byte[] userProfilePicture;
+        public byte[] UserProfilePicture
+        {
+            get { return userProfilePicture; }
+            set { userProfilePicture = value; }
         }
 
         public static string userFirstName;

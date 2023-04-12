@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CRUD_Assignment.Forms.Users
 {
@@ -26,6 +27,12 @@ namespace CRUD_Assignment.Forms.Users
         {
             gender.LoadGendersInCmbGender(cmbGender);
 
+            if (val.UserProfilePicture != null)
+            {
+                MemoryStream ms = new MemoryStream(val.UserProfilePicture);
+                picProfileUser.Image = Image.FromStream(ms);
+            }
+
             txtFirstName.Text = val.UserFirstName;
             txtMiddleName.Text = val.UserMiddleName;
             txtLastName.Text = val.UserLastName;
@@ -34,6 +41,29 @@ namespace CRUD_Assignment.Forms.Users
             txtContactNumber.Text = val.UserContactNumber;
             txtEmail.Text = val.UserEmail;
             txtUsername.Text = val.UserUsername;
+        }
+
+        string imgLocation = string.Empty;
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.InitialDirectory = "C:\\Users\\joven joshua alovera\\Pictures";
+            dialog.Filter = "PNG Files|*.png|JPG Files|*.jpg|All Files|*.*";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName;
+                picProfileUser.ImageLocation = imgLocation;
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            imgLocation = string.Empty;
+            picProfileUser.ImageLocation = imgLocation;
+
+            val.UserProfilePicture = null;
+            picProfileUser.Image = null;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -67,10 +97,17 @@ namespace CRUD_Assignment.Forms.Users
             }
             else
             {
+                if (!String.IsNullOrWhiteSpace(imgLocation))
+                {
+                    FileStream fs = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    val.UserProfilePicture = br.ReadBytes((int)fs.Length);
+                }
+
                 int age = DateTime.Today.Year - dateBirthday.Value.Year;
                 if (dateBirthday.Value.Date > DateTime.Today.AddYears(-age)) age--;
 
-                if (user.UpdateUser(val.UserId, txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, cmbGender.Text, age, dateBirthday.Value.Date,
+                if (user.UpdateUser(val.UserId, val.UserProfilePicture, txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, cmbGender.Text, age, dateBirthday.Value.Date,
                     txtContactNumber.Text, txtEmail.Text, txtUsername.Text))
                 {
                     MessageBox.Show("User successfully updated!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
